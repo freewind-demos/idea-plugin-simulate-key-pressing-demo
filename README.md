@@ -8,6 +8,18 @@ Two way to simulate key pressing:
 
 The 2nd way has issues, can't fix it now.
 
+Update:
+
+The issue of 2 is (almost) fixed. The reason if when you press a key, it actually triggered 3 events:
+
+1. `KEY_PRESSED`
+2. `KEY_TYPED`
+3. `KEY_RELEASED`
+
+So if we use `Robot.keyPress/keyRelease` for each event, it will trigger more than expected.
+
+But, why it's 10 times, not 15? Figure it next time.
+
 Run plugin in IDEA
 ------------------
 

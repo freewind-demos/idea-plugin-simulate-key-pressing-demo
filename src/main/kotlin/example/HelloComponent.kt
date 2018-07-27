@@ -9,6 +9,7 @@ import java.awt.Component
 import java.awt.Robot
 import java.awt.Toolkit
 import java.awt.event.KeyEvent
+import java.awt.event.KeyEvent.KEY_TYPED
 
 class HelloComponent : ApplicationComponent {
 
@@ -34,10 +35,11 @@ class HelloComponent : ApplicationComponent {
 
                         val robot = Robot()
 
-                        // FIXME not sure why it prints 'c' 10 times
-                        repeat(5) {
-                            robot.keyPress(67)
-                            robot.keyRelease(67)
+                        if (event.id == KEY_TYPED) {
+                            repeat(5) {
+                                robot.keyPress(67)
+                                robot.keyRelease(67)
+                            }
                         }
                     }
                 }
